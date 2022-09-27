@@ -1,7 +1,7 @@
 (function () {
   const getAllArchiveNotes = require("./getAllArchiveNotes");
   const getAllNotes = require("./getAllNotes");
-  const addNote = require("./addNote");
+  const addNote = require("./addNote.ts");
   const archiveNote = require("./archiveNote");
   const getNoteById = require("./getNoteById");
   const getNotesSummary = require("./getNotesSummary");
