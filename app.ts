@@ -10,11 +10,11 @@
 
   app.use("/notes", notesRouter);
 
-  app.use((req: Request, res: Response) => {
+  app.use((req, res) => {
     res.status(404).json({ status: "error", code: 404, message: "Not found" });
   });
 
-  app.use((err: Error, req: Request, res: Response) => {
+  app.use((err, req, res) => {
     const status = err.status || 500;
     res
       .status(status)
