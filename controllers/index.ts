@@ -1,14 +1,14 @@
 (function () {
-  const addNote = require("./addNote");
-  const archiveNote = require("./archiveNote");
-  const getAllArchiveNotes = require("./getAllArchiveNotes");
-  const getAllNotes = require("./getAllNotes");
-  const getNoteById = require("./getNoteById");
-  const getNotesSummary = require("./getNotesSummary");
-  const removeArchiveNote = require("./removeArchiveNote");
-  const removeNote = require("./removeNote");
-  const unarchiveNote = require("./unarchiveNote");
-  const updateNote = require("./updateNote");
+  const addNote = require("./CTRLaddNote");
+  const archiveNote = require("./CTRLarchiveNote");
+  const getAllArchiveNotes = require("./CTRLgetAllArchiveNotes");
+  const getAllNotes = require("./CTRLgetAllNotes");
+  const getNoteById = require("./CTRLgetNoteById");
+  const getNotesSummary = require("./CTRLgetNotesSummary");
+  const removeArchiveNote = require("./CTRLremoveArchiveNote");
+  const removeNote = require("./CTRLremoveNote");
+  const unarchiveNote = require("./CTRLunarchiveNote");
+  const updateNote = require("./CTRLupdateNote");
 
   module.exports = {
     addNote,
