@@ -1,4 +1,3 @@
-const Notes = require("../repositories/index");
 const app = require("../app.ts");
 
 const PORT = process.env.PORT || 3000;
