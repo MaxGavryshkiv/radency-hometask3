@@ -3,18 +3,14 @@
   const path = require("path");
   const { v4: uuid } = require("uuid");
   const getAllNotes = require("./getAllNotes");
+  const getDate = require("../helpers/getDate");
+  const getDateFromContent = require("../services/dateValidation");
 
-  const addNote = async (body: {
-    noteName: string;
-    category: string;
-    content: string;
-  }) => {
+  const addNote = async (body) => {
     const notes = await getAllNotes();
     const id = uuid();
-    const createDate: string = require("../helpers/getDate")();
-    const dateValidation: string = require("../services/dateValidation")(
-      body.content
-    );
+    const createDate = getDate();
+    const dateValidation = getDateFromContent(body.content);
     const newNote = {
       id,
       created: createDate,
