@@ -1,6 +1,6 @@
 (function () {
   const getAllArchiveNotes = require("./getAllArchiveNotes.ts");
-  const getAllNotes = require("./getAllNotes.ts");
+  const getNotes = require("./getNotes.ts");
   const addNote = require("./addNote.ts");
   const archiveNote = require("./archiveNote.ts");
   const getNoteById = require("./getNoteById.ts");
@@ -12,7 +12,7 @@
 
   module.exports = {
     getAllArchiveNotes,
-    getAllNotes,
+    getNotes,
     addNote,
     archiveNote,
     getNoteById,

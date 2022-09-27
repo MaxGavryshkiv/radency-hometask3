@@ -2,12 +2,12 @@
   const fs = require("fs/promises");
   const path = require("path");
   const { v4: uuid } = require("uuid");
-  const getAllNotes = require("./getAllNotes");
-  const getDate = require("../helpers/getDate");
-  const getDateFromContent = require("../services/dateValidation");
+  const getNotes = require("./index.ts");
+  const getDate = require("../helpers/getDate.ts");
+  const getDateFromContent = require("../services/dateValidation.ts");
 
   const addNote = async (body) => {
-    const notes = await getAllNotes();
+    const notes = await getNotes();
     const id = uuid();
     const createDate = getDate();
     const dateValidation = getDateFromContent(body.content);

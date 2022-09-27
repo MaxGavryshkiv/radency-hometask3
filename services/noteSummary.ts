@@ -1,13 +1,4 @@
-type notesType = {
-  id?: string;
-  created?: string;
-  dates?: string;
-  noteName?: string;
-  category?: string;
-  content?: string;
-}[];
-
-const noteSummary = (notes: notesType, archiveNotes: notesType) => {
+const noteSummary = (notes, archiveNotes) => {
   let countOfIdeas = 0;
   let countOfTasks = 0;
   let countOfThoughts = 0;
