@@ -1,18 +1,9 @@
 (function () {
-  type notesType = {
-    id: string;
-    created: string;
-    dates: string;
-    noteName: string;
-    category: string;
-    content: string;
-  };
+  const getNotes = require("./index.ts");
 
-  const getAllNotes = require("./getAllNotes");
-
-  const getNoteById = async (noteId: string) => {
-    const notes = await getAllNotes();
-    const [noteById] = notes.filter((note: notesType) => note.id === noteId);
+  const getNoteById = async (noteId) => {
+    const notes = await getNotes();
+    const [noteById] = notes.filter((note) => note.id === noteId);
     return noteById;
   };
 

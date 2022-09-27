@@ -1,21 +1,12 @@
 (function () {
-  type notesType = {
-    id: string;
-    created: string;
-    dates: string;
-    noteName: string;
-    category: string;
-    content: string;
-  };
-
   const fs = require("fs/promises");
   const path = require("path");
 
-  const getAllArchiveNotes = require("./getAllArchiveNotes");
+  const getAllArchiveNotes = require("./index.ts");
 
-  const removeArchiveNote = async (noteId: string) => {
+  const removeArchiveNote = async (noteId) => {
     const notes = await getAllArchiveNotes();
-    const index = notes.findIndex((note: notesType) => note.id === noteId);
+    const index = notes.findIndex((note) => note.id === noteId);
     if (index !== -1) {
       const removeNote = notes.splice(index, 1);
       await fs.writeFile(

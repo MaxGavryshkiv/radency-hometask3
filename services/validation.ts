@@ -17,7 +17,7 @@
     content: Joi.string().required(),
   }).or("noteName", "category", "content");
 
-  const validate = async (schema, obj, next, message: string) => {
+  const validate = async (schema, obj, next, message) => {
     try {
       await schema.validateAsync(obj);
       next();
@@ -31,16 +31,11 @@
       req,
       res,
       next,
-      message: string = "missing required name field"
+      message = "missing required name field"
     ) => {
       return validate(schemaCreateNote, req.body, next, message);
     },
-    validationUpdateNote: (
-      req,
-      res,
-      next,
-      message: string = "missing fields"
-    ) => {
+    validationUpdateNote: (req, res, next, message = "missing fields") => {
       return validate(schemaUpdateNote, req.body, next, message);
     },
   };

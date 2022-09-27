@@ -1,25 +1,25 @@
 (function () {
-  const addNote = require("./CTRLaddNote.ts");
-  const archiveNote = require("./CTRLarchiveNote.ts");
-  const getAllArchiveNotes = require("./CTRLgetAllArchiveNotes.ts");
-  const getAllNotes = require("./CTRLgetAllNotes.ts");
-  const getNoteById = require("./CTRLgetNoteById.ts");
-  const getNotesSummary = require("./CTRLgetNotesSummary.ts");
-  const removeArchiveNote = require("./CTRLremoveArchiveNote.ts");
-  const removeNote = require("./CTRLremoveNote.ts");
-  const unarchiveNote = require("./CTRLunarchiveNote.ts");
-  const updateNote = require("./CTRLupdateNote.ts");
+  const CTRLaddNote = require("./CTRLaddNote.ts");
+  const CTRLarchiveNote = require("./CTRLarchiveNote.ts");
+  const CTRLgetAllArchiveNotes = require("./CTRLgetAllArchiveNotes.ts");
+  const CTRLgetAllNotes = require("./CTRLgetAllNotes.ts");
+  const CTRLgetNoteById = require("./CTRLgetNoteById.ts");
+  const CTRLgetNotesSummary = require("./CTRLgetNotesSummary.ts");
+  const CTRLremoveArchiveNote = require("./CTRLremoveArchiveNote.ts");
+  const CTRLremoveNote = require("./CTRLremoveNote.ts");
+  const CTRLunarchiveNote = require("./CTRLunarchiveNote.ts");
+  const CTRLupdateNote = require("./CTRLupdateNote.ts");
 
   module.exports = {
-    addNote,
-    archiveNote,
-    getAllArchiveNotes,
-    getAllNotes,
-    getNoteById,
-    getNotesSummary,
-    removeArchiveNote,
-    removeNote,
-    unarchiveNote,
-    updateNote,
+    CTRLaddNote,
+    CTRLarchiveNote,
+    CTRLgetAllArchiveNotes,
+    CTRLgetAllNotes,
+    CTRLgetNoteById,
+    CTRLgetNotesSummary,
+    CTRLremoveArchiveNote,
+    CTRLremoveNote,
+    CTRLunarchiveNote,
+    CTRLupdateNote,
   };
 })();

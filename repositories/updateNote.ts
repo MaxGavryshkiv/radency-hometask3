@@ -1,32 +1,14 @@
 (function () {
-  type notesType = {
-    id: string;
-    created: string;
-    dates: string;
-    noteName: string;
-    category: string;
-    content: string;
-  };
-
   const fs = require("fs/promises");
   const path = require("path");
-  const getAllNotes = require("./getAllNotes");
+  const getNotes = require("./index.ts");
 
-  const updateNote = async (
-    noteId: string,
-    body: {
-      noteName: string;
-      category: string;
-      content: string;
-    }
-  ) => {
-    const notes = await getAllNotes();
-    const [updatableNote] = notes.filter(
-      (note: notesType) => note.id === noteId
-    );
+  const updateNote = async (noteId, body) => {
+    const notes = await getNotes();
+    const [updatableNote] = notes.filter((note) => note.id === noteId);
     if (updatableNote) {
-      const createDate: string = require("../helpers/getDate")();
-      const dateValidation: string = require("../services/dateValidation")(
+      const createDate = require("../helpers/getDate")();
+      const dateValidation = require("../services/dateValidation")(
         body.content
       );
       Object.assign(updatableNote, {

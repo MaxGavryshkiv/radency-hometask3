@@ -1,28 +1,15 @@
 (function () {
-  type notesType = {
-    id: string;
-    created: string;
-    dates: string;
-    noteName: string;
-    category: string;
-    content: string;
-  };
-
   const fs = require("fs/promises");
   const path = require("path");
-  const getAllNotes = require("./getAllNotes");
-  const getAllArchiveNotes = require("./getAllArchiveNotes");
+  const getNotes = require("./index.ts");
+  const getAllArchiveNotes = require("./index.ts");
 
-  const unarchiveNote = async (noteId: string) => {
-    const notes = await getAllNotes();
+  const unarchiveNote = async (noteId) => {
+    const notes = await getNotes();
     const archiveNotes = await getAllArchiveNotes();
 
-    const [noteById] = archiveNotes.filter(
-      (note: notesType) => note.id === noteId
-    );
-    const index = archiveNotes.findIndex(
-      (note: notesType) => note.id === noteId
-    );
+    const [noteById] = archiveNotes.filter((note) => note.id === noteId);
+    const index = archiveNotes.findIndex((note) => note.id === noteId);
 
     if (index !== -1) {
       archiveNotes.splice(index, 1);
