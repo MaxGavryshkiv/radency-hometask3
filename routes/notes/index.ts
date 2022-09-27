@@ -1,13 +1,12 @@
 (function () {
   const express = require("express");
   const router = express.Router();
-
-  const ctrl = require("../../controllers/index.ts");
+  const ctrl = require("../../controllers/CTRLindex.ts");
 
   const {
     validationCreateNote,
     validationUpdateNote,
-  } = require("../../services/validation");
+  } = require("../../services/validation.ts");
 
   router.get("/stats", ctrl.getNotesSummary);
   router.get("/", ctrl.getAllNotes);
