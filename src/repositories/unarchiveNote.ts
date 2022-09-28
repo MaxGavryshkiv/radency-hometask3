@@ -1,10 +1,10 @@
 type notesType = {
   id: string;
-  created: string;
-  dates: string;
   noteName: string;
+  created: string;
   category: string;
   content: string;
+  dates: string;
 };
 
 import fs from "fs/promises";
