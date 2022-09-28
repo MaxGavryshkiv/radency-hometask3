@@ -1,10 +1,10 @@
 type notesType = {
   id: string;
-  created: string;
-  dates: string;
   noteName: string;
+  created: string;
   category: string;
   content: string;
+  dates: string;
 };
 
 import fs from "fs/promises";
@@ -27,9 +27,12 @@ const updateNote = async (
     const createDate: string = getDate();
     const validatedDate: string = dateValidation(body.content);
     Object.assign(updatableNote, {
+      id: noteId,
+      noteName: body.noteName,
       created: createDate,
+      category: body.category,
+      content: body.content,
       dates: validatedDate,
-      ...body,
     });
     await fs.writeFile(
       path.join(__dirname, "../json/notes.json"),

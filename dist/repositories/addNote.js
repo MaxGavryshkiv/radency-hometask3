@@ -23,7 +23,14 @@ const addNote = (body) => __awaiter(void 0, void 0, void 0, function* () {
     const id = (0, uuid_1.v4)();
     const createDate = (0, getDate_1.default)();
     const validatedDate = (0, dateValidation_1.default)(body.content);
-    const newNote = Object.assign({ id, created: createDate, dates: validatedDate }, body);
+    const newNote = {
+        id,
+        noteName: body.noteName,
+        created: createDate,
+        category: body.category,
+        content: body.content,
+        dates: validatedDate,
+    };
     notes.push(newNote);
     yield promises_1.default.writeFile(path_1.default.join(__dirname, "../json/notes.json"), JSON.stringify(notes));
     return newNote;

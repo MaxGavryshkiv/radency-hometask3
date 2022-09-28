@@ -16,9 +16,11 @@ const addNote = async (body: {
   const validatedDate: string = dateValidation(body.content);
   const newNote = {
     id,
+    noteName: body.noteName,
     created: createDate,
+    category: body.category,
+    content: body.content,
     dates: validatedDate,
-    ...body,
   };
   notes.push(newNote);
   await fs.writeFile(
