@@ -10,11 +10,11 @@ const schemaCreateNote = Joi.object({
 });
 
 const schemaUpdateNote = Joi.object({
-  noteName: Joi.string().required(),
+  noteName: Joi.string().optional(),
   category: Joi.string()
     .pattern(/Task|Random Thought|Idea/)
-    .required(),
-  content: Joi.string().required(),
+    .optional(),
+  content: Joi.string().optional(),
 }).or("noteName", "category", "content");
 
 const validate = async (

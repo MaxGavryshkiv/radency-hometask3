@@ -22,11 +22,11 @@ const schemaCreateNote = joi_1.default.object({
     content: joi_1.default.string().required(),
 });
 const schemaUpdateNote = joi_1.default.object({
-    noteName: joi_1.default.string().required(),
+    noteName: joi_1.default.string().optional(),
     category: joi_1.default.string()
         .pattern(/Task|Random Thought|Idea/)
-        .required(),
-    content: joi_1.default.string().required(),
+        .optional(),
+    content: joi_1.default.string().optional(),
 }).or("noteName", "category", "content");
 const validate = (schema, obj, next, message) => __awaiter(void 0, void 0, void 0, function* () {
     try {
