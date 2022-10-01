@@ -21,14 +21,26 @@ const updateNote = (noteId, body) => __awaiter(void 0, void 0, void 0, function*
     const notes = yield (0, getAllNotes_1.default)();
     const [updatableNote] = notes.filter((note) => note.id === noteId);
     if (updatableNote) {
+        let nameOfNote = body.noteName;
+        let categoryOfNote = body.category;
+        let contentOfNote = body.content;
+        if (!body.noteName) {
+            nameOfNote = updatableNote.noteName;
+        }
+        if (!body.category) {
+            categoryOfNote = updatableNote.category;
+        }
+        if (!body.content) {
+            contentOfNote = updatableNote.content;
+        }
         const createDate = (0, getDate_1.default)();
-        const validatedDate = (0, dateValidation_1.default)(body.content);
+        const validatedDate = (0, dateValidation_1.default)(contentOfNote);
         Object.assign(updatableNote, {
             id: noteId,
-            noteName: body.noteName,
+            noteName: nameOfNote,
             created: createDate,
-            category: body.category,
-            content: body.content,
+            category: categoryOfNote,
+            content: contentOfNote,
             dates: validatedDate,
         });
         yield promises_1.default.writeFile(path_1.default.join(__dirname, "../json/notes.json"), JSON.stringify(notes));
